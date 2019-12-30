@@ -1,16 +1,34 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="BTS">
-        <meta name="description" content="Welcome to my Kakao Clone">
-        <title>This is my title</title>
-    </head>
-    <body>
-        <h1>This is my big title</h1>
-        <header>This is an important article</header>
-        <div>Whatever</div>
-        <span>Somthing else</span>
-        <h6>This is my small title</h6>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Box Model</title>
+    <style>
+        body, html{
+            padding: 0;
+            margin: 0;
+            background-color: green;
+            height: 100%;
+        }
+        .box{
+            background-color: yellow;
+            padding-top: 50px;
+            width: 50%;
+            height: 50%;
+        }
+        .inside-box{
+            background-color: blue;
+            width: 50%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="inside-box"></div>
+    </div>
+</body>
 </html>
+

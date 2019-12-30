@@ -98,7 +98,7 @@
       * description: 내용. >> 구글링 시 해당 웹페이지에 대한 부가설명, 간략한 설명글
   - 참고 링크
     + [Special tags that Google understands](https://support.google.com/webmasters/answer/79812?hl=en)
-    + [<meta>:The Document-level Metadata element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
+    + [The Document-level Metadata element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
 
 #### #2-6
   - Semantic Tag: 의미 있는 태그
@@ -133,4 +133,78 @@
 ### Module #3 CSS3
 #### #3-1, #3-2
   - How to mix our CSS with our HTML
-  
+  - CSS의 구성
+    + selector(id, class, tag name){property}
+    + selector: 대상 지정
+      * h1{ property }
+      * property 개수의 제한은 없음
+      * 모든 tag를 대상으로 지정할 수 있음
+      * id, class를 대상 조건에 포함할 수 있음
+        = 태그 tag
+        = 클래스 .class
+        = 아이디 #id
+    + property: 속성 값 부여
+      * property-name: value;
+      * 공백없음(띄어쓰기 안됨), 세미콜론 필수
+
+#### #3-3
+  - Mixing CSS with HTML
+  - html 파일 만들고 "html:5" 쓰고 "enter" 치면 기본 폼이 쫙 깔림
+  - CSS HTML에 적용하는 법
+    + inline > 내부 삽입(안좋음)
+      = html 소스 내부에 style 태그를 삽입하여 CSS 작성하는 법
+      = 페이지 이동하면 CSS가 다 풀려서 페이지별로 스크립트를 삽입해줘야 해서 좋지 않다.
+      = 스타일시트 만들어서 떙겨오기
+    + 별도의 css파일 만들어서 html 문서 head에 연결하기
+      * 연결된 모든 html에 css가 적용됨
+      * 유지보수가 편리함
+      * head 태그 내부 최 하단에 link 걸기
+      ```javascript
+        <head>
+            <link href="style.css" rel="stylesheet">
+        </head>
+      ```
+
+#### #3-4 Box Model
+  - element들은 다 Box구조로 구현된다.
+  - 크게 4가지(Content, Padding, Border, Margin)로 구분된다.
+    + Content(내용): 내용이 들어가는 부분
+    + Padding(내용↔경계): 내용과 박스 경계 사이 간격
+    + Border(경계): 박스 경계
+    + Margin(경계↔바깥): 박스 경계와 바깥 요소 사이 간격
+  - 자동완성 명령어(아직 안알랴줌 > Ctrl+Space+Enter 같음)
+    + default로 div로 생성되고, 시작을 span으로 하면 쭉 span으로 생성
+      * name1#name2.name3
+        = id가 name2, class가 name3인 name1 tag
+      * 명령어>명령어: 부모관계
+      * 명령어+명령어: 같은depth
+    + 예시
+      * tag>tag.class+tag#id 형식
+      * article>h2.articleheader2+h4#arth4
+      ```html
+      <article>
+          <h2 class="articleheader2"></h2>
+          <h4 id="arth4"></h4>
+      </article>
+      ```
+      * tag name없이 id, class만 입력 시 div로 생성
+      * .name>.name2+.name3+.name4>.name5
+      ```html
+      <div class="name">
+         <div class="name2"></div>
+         <div class="name3"></div>
+         <div class="name4">
+              <div class="name5"></div>
+         </div>
+      </div>
+      ```
+      * span으로 시작 시 나머지는 span으로 생성됨
+      * span.name>.name2+.name3+.name4>.name5
+      ```html
+      <span class="name">
+          <span class="name2"></span>
+          <span class="name3"></span>
+           <span class="name4"><span class="name5"></span></span>
+       </span>
+      ```
+
