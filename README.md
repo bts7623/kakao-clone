@@ -1,13 +1,15 @@
 # kakao-clone
  nomadcoder kakao-clone coding
 
-Kakao Desktop App clone
+ Kakao Desktop App clone
 
 # Object
   - HTML, CSS 개념을 숙지하고 카카오톡 클론 코딩을 진행한다.
 
 # History
 #### 2019.12.27: 기본공지, #1-1 ~ #1-6
+#### 2019.12.30: #1-7
+
   
 # Concept
 #### #1-1, #1-2
@@ -27,9 +29,18 @@ Kakao Desktop App clone
       * master branch는 실 사용자들이 이용하고 있고, branch를 따서 새 기능을 테스트 한 뒤 문제가 없을 시 master와 합친다.
       
 #### #1-5, #1-6
-  - Git vs Git Herb
+  - Git vs Git Hub
     + Git: 코드의 변경사항 추적 > 코드가 언제, 어떻게, 누구에 의해서 변경되었는지 기록하는 것.
-    + GitHerb: 이런 변경사항들을 클라우드에 올리는 곳
+    + GitHub: 이런 변경사항들을 클라우드에 올리는 곳
       * 비슷한 플랫폼으로 Bitbucket이 있다.
-    + GitHub desktop: GitHerb에서 만든 desktop 설치버전
+    + GitHub Desktop: GitHub에서 만든 desktop 설치버전
     + console로도 Git을 이용할 수 있고 빠르지만 접근성이 낮아 숙련도가 필요하다.
+
+#### #1-7
+  - GitHub Repository
+    + GitHub Desktop에서 Repository를 생성하면 GitHub에도 생성됨
+    + Repository 설정 시 local Path를 원하는 곳에 잡아줌.(Default 문서\GitHub)
+  - GitHub Desktop Commit&Push
+    + 해당 local Path에서 파일내용 변경 시 자동으로 GitHub Desktop에 실시간으로 변경사항이 표기됨
+    + 현시점까지 변경된 모든 사항을 한번에 Commit할 수 있으며 Local master branch에 update가 됨.(GitHub 올라가는거 아님)
+    + Commit을 하면 우측 상단을 통해 Push할 수 있으며, Push하면 GitHub에 Commit 내용이 반영됨.
