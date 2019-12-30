@@ -8,10 +8,11 @@
 
 # History
 #### 2019.12.27: 기본공지, #1-1 ~ #1-6
-#### 2019.12.30: #1-7
+#### 2019.12.30: #1-7 ~ #2-8
 
   
 # Concept
+### Module #1 The tools of a Web Developer
 #### #1-1, #1-2
   - Visual Studio Code 관련 Extensions 추가
     + prettier: setting > format on save 체크박스 클릭 > 저장 시 자동으로 코드 배열이나 세미콜론 체크해줌
@@ -44,3 +45,92 @@
     + 해당 local Path에서 파일내용 변경 시 자동으로 GitHub Desktop에 실시간으로 변경사항이 표기됨
     + 현시점까지 변경된 모든 사항을 한번에 Commit할 수 있으며 Local master branch에 update가 됨.(GitHub 올라가는거 아님)
     + Commit을 하면 우측 상단을 통해 Push할 수 있으며, Push하면 GitHub에 Commit 내용이 반영됨.
+
+#### #1-8
+  - HTML, CSS 둘 다 프로그래밍 언어가 아니다.
+    + HTML, CSS 둘의 상호보완으로 페이지가 구현됨
+    + HTML은 브라우저에게 각 요소가 무엇인지 설명하고, CSS는 각 요소의 색상, 크기, 배경은 어떠한지 등을 설명함
+  - HTML: Hyper Text Markup Language
+    + Mark-Up: 밑줄을 긋다.
+    + HTML은 널부러져있는 소스코드들을 어디가 무엇을 나타내는지 표기, 마킹하는 언어. 여기서부터 여기까지는 타이틀, 여기서부터 여기는 링크. 들 각각 무엇인지 알려주는 언어이다.
+  - CSS: Cascading Style Sheet
+    + cascade: 폭포수, 계단식
+    + 각각의 요소가 어떻게 생겼는지 정의하는 것
+      * 색상, 크기, 배경 등
+
+---
+### Module #2 HTML5
+#### #2-1, #2-2 #2-3
+  - HTML: tag가 많은 text문서, 표기하고 강조하는 언어
+  - index.html
+    + 웹 서버들이 index파일을 제일 먼저 찾도록 설계되어 있음.(Default 값)
+  - <tag> 태그
+    + <이름 속성="값">내용</이름> 형식으로 쓰임
+    + <name attribute="value">Content</name>
+    + <a>의 attribute로 target="_blank"해주면 새창으로 이동한다.
+
+#### #2-4
+  - <!DOCTYPE html>: 구글 크롬이 이 문서가 html임을 인식하게 해줌.
+    + 따로 닫는 태그 </>가 없는 것: self-contained tag
+    + self-contained tag는 그 자체로 정보를 제공하기 때문에 닫는 태그가 없다.
+  - html은 head, body로 나뉘며 꼭 닫아줘야 브라우저가 인식함
+    + head는 일반 사용자에게 보이지 않고 브라우저에게 정보를 줌
+  - 기본 tag
+    + head 태그와 header 태그는 엄연히 다름
+      * head invisible: 브라우저 데이터를 저장하는 곳
+      * header visible: 머릿말을 표기하는 곳
+    + head > title
+      * 해당 html의 title을 정해줌. 탭의 이름.
+    + body > h1 ~ h6
+      * 굵은 글씨로 써줌
+  - 갑자기 튀어나온 Awesome Useful Google Chrome Extensions
+    + [colorZilla](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?hl=en)
+    + [Page Ruler](https://chrome.google.com/webstore/detail/page-ruler/emliamioobfffbgcfdchabfibonehkme?hl=en)
+
+#### #2-5
+  - meta tag: 추가 정보, 엑스트라
+    + meta 정보는 사용자가 아닌 브라우저를 위한 정보로 모두 head에 적는다.
+    + 사용자가 보는 Contents는 모두 body에 적는다.
+    + charset: Character encoding
+      * 해당 언어로 아래 코딩을 인코드하겠다는 정보. utf-8사용
+    + name = author, description 등 다양한 meta tag가 있다.
+      * author: 작성자
+      * description: 내용. >> 구글링 시 해당 웹페이지에 대한 부가설명, 간략한 설명글
+  - 참고 링크
+    + [Special tags that Google understands](https://support.google.com/webmasters/answer/79812?hl=en)
+    + [<meta>:The Document-level Metadata element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
+
+#### #2-6
+  - Semantic Tag: 의미 있는 태그
+    + 단순히 공간 할당이 아닌 태그 자체에 의미가 있는 것들을 나타내는 듯
+      * 제목, 문단, 네비게이션 등 뭔가 뜻이 있는 태그
+      * 검색해보니 태그 자체에 엄청난 의미나 기능이 있는 것이아니고 페이지 레이아웃을 스타일링 할 수 있는 태그를 임의로 정의해서 쓰는 것.
+      * 해당 태그들은 검색 엔진의 컨텐츠 식별에도 도움을 줌
+      * HTML5에서 태그가 추가됨
+    + h tag
+    + section: 부분
+    + article: 항목
+    + header, footer: 머릿글, 바닥글
+  - Non Semantic Tag: 의미 없는 태그. 아무 지칭하는 바가 없는 태그
+    + div > division: 분할정도의 뜻으로 의미 없음
+      * 단순히 박스나 컨테이너가 필요할 때 쓰는 태그
+    + span: 짧다는 뜻으로 타이틀인지 문단인지 알 수 없음
+      * 텍스트를 위한 컨테이너가 필요할 때 쓰는 태그
+  - 참고 링크
+    + [Semantic Elements](https://www.w3schools.com/html/html5_semantic_elements.asp)
+    + [HTML5 Migration](https://www.w3schools.com/html/html5_migration.asp)
+
+#### #2-7
+  - tag들은 id와 class를 이용해서 구분할 수 있다.
+  - id는 element 당 1개(고유), class는 반복될 수 있다(동일 속성 부여).
+  - id는 고유하기 때문에 고유한 부분에서만 사용
+  - 대부분의 서비스들은 동일한 폼의 반복이기 때문에 class를 이용해서 속성을 부여
+    
+#### #2-8 
+  - Recap: recapitulation 요약, recapitulation 개요를 말하다.
+
+---
+### Module #3 CSS3
+#### #3-1, #3-2
+  - How to mix our CSS with our HTML
+  
