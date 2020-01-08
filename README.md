@@ -8,7 +8,8 @@
 
 # History
 #### 2019.12.27: 기본공지, #1-1 ~ #1-6
-#### 2019.12.30: #1-7 ~ #2-8
+#### 2019.12.30: #1-7 ~ #3-3
+#### 2020.01.08: #3-4 ~ #3-6
 
   
 # Concept
@@ -131,6 +132,8 @@
 
 ---
 ### Module #3 CSS3
+  - #3 CSS3 Part는 해당 강좌 소스파일을 통째로 올려줘서 그것을 Commit하고 강좌를 들으면서 진행하는 연습은 그 때 그 때 파일을 생성하고 지우고 하면서 진행함.
+
 #### #3-1, #3-2
   - How to mix our CSS with our HTML
   - CSS의 구성
@@ -149,7 +152,7 @@
 
 #### #3-3
   - Mixing CSS with HTML
-  - html 파일 만들고 "html:5" 쓰고 "enter" 치면 기본 폼이 쫙 깔림
+  - html 파일 만들고 "html:5" 쓰고 "Enter" 치면 기본 폼이 쫙 깔림
   - CSS HTML에 적용하는 법
     + inline > 내부 삽입(안좋음)
       = html 소스 내부에 style 태그를 삽입하여 CSS 작성하는 법
@@ -207,4 +210,34 @@
            <span class="name4"><span class="name5"></span></span>
        </span>
       ```
+  - padding, margin 설정
+    + top, bottom, right, left가 있음
+      * padding-top: 50px; 
+      * margin-right: 30px;
+    + 단축키
+      * padding: 50px; //상하좌우 50px
+      * padding: 20px 30px; //상하 20px, 좌우 30px
+      * padding: 10px 20px 30px 40px; //상 10px, 우 20px, 하 30px, 좌 40px
+        * 시계방향
+    + 구글크롬 개발자모드(F12, 화면 우클릭 검사)에서 적용사항 확인 가능
+  - border
+    + 폭(border-width), 스타일(border-style), 색상(border-color)
+      * 스타일을 지정하지 않으면 표기되지 않음
+      * border-width: 5px;
+      * border-style: dashed;
+      * border-color: red;
+    + 단축키(border: width style color;)
+      * border: 5px dashed red;
+      * 순서 바뀌어도 상관 없는듯 하지만 위 순서로 고정하자
+    + border-style
+      * border도 padding, margin처럼 상하좌우로 스타일을 설정할 수 있다.
+        * 1: 상하좌우, 2: 상하/좌우, 3:상/좌우/하, 4:상/우/하/좌
+      * border에 width style color 한번에 쓸 때는 적용이 안된다.
+      * [참고링크](https://developer.mozilla.org/ko/docs/Web/CSS/border-style)
 
+#### #3-5 Inline vs Block vs Inline Block
+  - Block(Default): 가로 전체를 차지하며 옆에 다른 element를 둘 수 없다.
+  - Inline-Block: 옆에 다른 element를 둘 수 있다.
+  - Inline: Block의 형태를 잃는다. width, height 속성 값을 없애고 입력된 데이터의 크기만큼만 표기된다.
+
+#### #3-6 Position property

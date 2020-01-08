@@ -4,31 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Box Model</title>
+    <title>Document</title>
     <style>
-        body, html{
-            padding: 0;
-            margin: 0;
-            background-color: green;
-            height: 100%;
-        }
         .box{
-            background-color: yellow;
-            padding-top: 50px;
-            width: 50%;
-            height: 50%;
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            display: inline-block;
         }
-        .inside-box{
+        .box2{
             background-color: blue;
-            width: 50%;
-            height: 50%;
+            width: 200px;
+            height: 300px;
+            border: 2px solid black;
+            display: inline-block;
+        }
+        .box3{
+            background-color: green;
+            width: 200px;
+            height: 50px;
+            border: 2px solid black;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
-    <div class="box">
-        <div class="inside-box"></div>
-    </div>
+    <div class="box">123123</div>
+    <div class="box2">2</div>
+    <div class="box3">sdfsfsdf</div>
 </body>
 </html>
-
