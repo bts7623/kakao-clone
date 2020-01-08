@@ -236,8 +236,14 @@
       * [참고링크](https://developer.mozilla.org/ko/docs/Web/CSS/border-style)
 
 #### #3-5 Inline vs Block vs Inline Block
-  - Block(Default): 가로 전체를 차지하며 옆에 다른 element를 둘 수 없다.
-  - Inline-Block: 옆에 다른 element를 둘 수 있다.
-  - Inline: Block의 형태를 잃는다. width, height 속성 값을 없애고 입력된 데이터의 크기만큼만 표기된다.
+  - block(default): 가로 전체를 차지하며 옆에 다른 element를 둘 수 없다.
+  - inline-block: 옆에 다른 element를 둘 수 있다.
+  - inline: block의 형태를 잃는다. width, height 속성 값을 없애고 입력된 데이터의 크기만큼만 표기된다.
 
 #### #3-6 Position property
+  - Position
+    + static(default): 입력된 그 위치에 그대로 있음.
+      * 스크롤 내리면 위로 올라가서 사라짐
+    + fixed: 눈에 보이는 그 자리에 고정되어 있음.
+      * 스크롤 내려도 사라지지 않고 그자리에 고정되어 보임
+      * 상하좌우 간격 설정 가능
