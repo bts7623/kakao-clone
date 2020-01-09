@@ -10,6 +10,7 @@
 #### 2019.12.27: 기본공지, #1-1 ~ #1-6
 #### 2019.12.30: #1-7 ~ #3-3
 #### 2020.01.08: #3-4 ~ #3-6
+#### 2020.01.09: #3-7
 
   
 # Concept
@@ -181,6 +182,8 @@
         = id가 name2, class가 name3인 name1 tag
       * 명령어>명령어: 부모관계
       * 명령어+명령어: 같은depth
+      * 명령어*n: n개의 tag 생성
+      * 명령어{$}*n: 1~n까지 입력된 n개의 tag
     + 예시
       * tag>tag.class+tag#id 형식
       * article>h2.articleheader2+h4#arth4
@@ -301,3 +304,69 @@
     + [nav tag](https://developer.mozilla.org/ko/docs/Web/HTML/Element/nav)
     + [z-index](https://developer.mozilla.org/ko/docs/Web/CSS/z-index)
     + [vertical-align](https://developer.mozilla.org/ko/docs/Web/CSS/vertical-align)
+
+#### #3-7 Fluid layouts with Flexbox
+  - display: inline-block;의 box가 다수 있을 경우 width값을 넘어가면 줄바꿈이 되어 내려오는데, 그 간격이 깔끔하지 않았다.
+    + 이것을 해결하는 것이 Flex다.
+  - display: flex;
+    + display 속성의 하나 / display: flex;
+    + children box에는 적용하지 않고 오직 부모 클래스에만 적용함
+      * children에 display: inline-block; 처리를 안해도 inline-block 방식으로 출력 됨.
+      * children box가 창을 줄여도 그 창에 맞춰서 폭이 조정됨. 
+  - justyfy-content: property;
+    + 행 정렬(수평)
+      * 왼쪽: left
+      * 오른쪽: right
+      * 가운데: center
+      * width 최대 값 기준으로 같은 간격 벌리기
+        * 컨텐츠만: space-between // box가 양 끝에 붙음
+        * 추변 간격 포함: pace-around // box와 양 끝 사이 간격이 있음
+    + 단, flex-direction이 column이면 수직을 담당함
+  - align-items: property;
+    + 열 정렬(수직)
+      * 위: flex-start
+      * 아래: flex-end
+      * 가운데: center
+    + 단, flex-direction이 column이면 수평을 담당함
+  - flex-direction
+    + 자식 블럭을 가로로 쌓을지 세로로 쌓을지 정할 수 있음
+    + column, column-revers: 세로
+    + row(default), row-revers: 가로
+  - flex-wrap
+    + box들이 폭을 줄이지 않고 줄바꿈 되도록 설정
+    + nowrap(default): 줄바꿈 되지 않고 창 크기에 맞게 크기가 줄어듦
+    + wrap: 크기를 유지한채로 창 크기가 줄으면 줄 바꿈이 됨
+  - 자식 box에 display: flex;하면 자식 box 내부의 text 등의 컨텐츠를 정렬할 수 있다.(움직일 수 있다.)
+  - 참고 링크
+    + [practice flexbox](http://flexboxfroggy.com/#ko)
+
+#### #3-8 CSS Selectors and Pseudo Selectors
+  - Pseudo Selectors(가상 셀렉터)
+  - 기존의 class 명을 입력해서 CSS를 적용하는 것이 아닌 tag type을 입력해서 CSS를 적용하는 방법 → `html tag, id, class 사용 없이 CSS 적용하는 법`
+  - tag 내부 property 
+    + ex_input[type='submit']{background-color: red;}
+    + input{border: 1px solod grey;}
+  - .class:propery{}
+    + last-child
+      * .box:last-child{}
+        * box 클래스의 가장 마지막 박스를 선택한다.
+    + first-child > 가장 첫 박스
+    + nth-child(n) > n번째 박스
+      * nth-child(3) 3번쨰 박스 선택
+    + nth-child(2n) > 2n번째 element를 선택
+      * .box:nth-child(2n){background-color: red;} > 2, 4, 6.., 2n 번째 박스를 red로 칠함
+      * 3n, 4n, 2n+1, 3n+1, 3n+2 등으로 응용 가능
+  - input > .box{}
+    + direct child, 직계라는 뜻
+    + 그 밑에 다른 박스들이 있다면 그 박스들에는 해당되지 않음
+      * .box{color: red;} / input > .box{color: green;} 설정이 있을 때
+        * input tag 직계 하위 .box의 text는 green을 띠게 된다.
+    + .class1 > .class2 등 응용 가능
+  - input + .box{}
+    + 형제관계: 동등선상에 있는 것을 선택
+    + input tag와 직계 관계 없이 나란한 .box는 위 설정을 따름
+  - 참고 링크
+    + [nth-test](http://www.topdesignagencies.com/nth-test/)
+
+#### #3-9 Element States with CSS
+  - CSS States
