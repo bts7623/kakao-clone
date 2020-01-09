@@ -236,17 +236,33 @@
       * [참고링크](https://developer.mozilla.org/ko/docs/Web/CSS/border-style)
 
 #### #3-5 Inline vs Block vs Inline Block
-  - block(default): 가로 전체를 차지하며 옆에 다른 element를 둘 수 없다.
-  - inline-block: 옆에 다른 element를 둘 수 있다.
-  - inline: block의 형태를 잃는다. width, height 속성 값을 없애고 입력된 데이터의 크기만큼만 표기된다.
+  - Display
+    + block(default): 가로 전체를 차지하며 옆에 다른 element를 둘 수 없다.
+    + inline-block: 옆에 다른 element를 둘 수 있다.
+    + inline: block의 형태를 잃는다. width, height 속성 값을 없애고 입력된 데이터의 크기만큼만 표기된다.
 
 #### #3-6 Position property
   - Position
     + static(default): 입력된 그 위치에 그대로 있음.
       * 스크롤 내리면 위로 올라가서 사라짐
-    + fixed: 눈에 보이는 그 자리에 고정되어 있음.
+    + fixed: 눈에 보이는 그 자리에 고정되어 있음. 오버랩 되어 고정됨. 계속 보임.
       * 스크롤 내려도 사라지지 않고 그자리에 고정되어 보임
       * 상하좌우 간격 설정 가능
+        * top OR bottom //top: 10px하면 최 상단에서 10px 떨어져서 고정되어 있다. bottom과 개념이 겹쳐서 둘 중 하나만 씀
+        * left OR right //left: 50% 등 %로도 작성가능하다.
+    + absolute: 상응하는 부모관계에 고정됨
+      * fixed와 마찬가지로 top/bottom, left/right로 위치 조절 가능하지만 매칭되는 부모박스가 없으면 body를 기준으로 고정됨
+      * 성능 자체는 static과 같고, 부모박스 내부 특정 위치에 element를 고정시키고 싶을 때 사용하는듯
+      * position: relative; 박스를 부모관계로 인지하고 해당 박스 내부에 상대적으로 위치함
+    + relative: absolute와 매칭되는 부모 박스
+    + absolute, relative 관계는 1:多가 가능하다.
+      * html tag 내에서 부모자식 관계를 갖고 있어야 한다.
+      * 별도의 relative-1, relative-2, absolute-1, absolute-2 등의 매칭을 하는 것이 아니다.
+      * 모두 relative와 absolute로만 position을 설정 하며 absolute position을 가진 box들이 html tag 내에서 부모로 있는 tag에 relative가 있으면 가서 달라 붙고 없으면 body에 붙는 것이다.
+      * .A>.B (div A가 부모, div B가 자식인 형태)일 때 div B position이 absolute고 div A가 relative여야만 가서 붙는다.
+      * .A+.B (div A와 div B가 부모자식 관계없이 놓여있는 형태)일 때 div B position이 absolute고 div A가 relative여도 div B는 div A에 안붙고 body에 붙는다.
+  - 기타
+    + [참고링크](https://www.w3schools.com/cssref/pr_class_position.asp)
 
 #### #Day3 Code Challenge
   - 첫 코드 과제인데 실패함.
