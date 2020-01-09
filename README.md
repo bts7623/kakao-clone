@@ -247,3 +247,41 @@
     + fixed: 눈에 보이는 그 자리에 고정되어 있음.
       * 스크롤 내려도 사라지지 않고 그자리에 고정되어 보임
       * 상하좌우 간격 설정 가능
+
+#### #Day3 Code Challenge
+  - 첫 코드 과제인데 실패함.
+  - 코드 과제들은 code_challenge folder에 기록함.
+  - 문제 원문(따로 복사를 못해둠 기억나는대로 기입)
+    + red bar는 스크롤해도 그 자리에 있어야 한다.
+    + blue box의 글은 50px 안에 있어야 한다.
+      * This is the day one (color: white)
+    + yellow box는 회색 테두리를 가져야 한다.
+    + green box는 red, blue, yellow 중간에 있어야 한다.
+  - Q&A
+    + 상단 부 공간을 비우고 blue, yellow를 red선에 맞게 위치 시키는 것이 어려웠음
+      * body에 padding을 줘서 해결
+    + blue, yellow를 display: inline-box를 해도 옆에 안오고 위아래로 틀어짐
+      * vertical-align: top;을 통해 윗단에 라인을 맞춤
+    + green box를 올리는데 나는 position: fixed;를 body에 붙여서 진행하다보니 위치가 이쁘게 안나왔음.
+      * yellow-box에 붙이고 top, left에 음수 값을 넣는 것이 포인트
+    + z-index 빼고 다 구현 시 depth가 green>yellow>red>blue 순이었다.
+      * z-index로 순서 정렬
+  - 구현 방식 배워야할 점
+    + red-bar를 nav tag로 구현했길래 뭐지? 하고 봤는데 nav가 목차 만들 때 주로 쓰는 태그이고 red-bar 형태가 목차이다 보니 div보다 nav로 구현한듯.
+    + blue, yellow를 box라는 공통 class로 구현하고 blue, yellow class를 각자 부여해서 추가 설정을 함.
+    + z-index로 red-bar, yellow-box, green-box의 depth를 정함
+    + body padding, margin을 0을 줘서 초기화 시킴
+  - z-index
+    + position 속성을 이용하여 요소를 겹칠 수 있는데 이 때 요소들의 수직 위치를 정하는 속성
+    + 숫자가 클 수록 위로 올라오고 작을 수록 아래로 내려감
+      * 코드 상 나중에 입력한 것이 위로 올라옴
+    + default값은 auto이며 기본 0으로 취급한다.
+    + 자식 tag에 z-index를 아무리 높여도 부모 z-index가 낮으면 자식 tag는 부모 값을 따라간다.
+    + 부모 z-index가 default고 자식만 z-index가 있으면 위로 올라올 수 있다.
+      * red: 1, yellow: 0, green: 2를 해도 green이 부모인 yellow를 따라 0이되어
+        red 아래에 깔림
+      * red: 1, yellow:defualt(auto), green: 2를 하면 green이 red 위에 올라옴
+  - 참고 링크
+    + [nav tag](https://developer.mozilla.org/ko/docs/Web/HTML/Element/nav)
+    + [z-index](https://developer.mozilla.org/ko/docs/Web/CSS/z-index)
+    + [vertical-align](https://developer.mozilla.org/ko/docs/Web/CSS/vertical-align)
