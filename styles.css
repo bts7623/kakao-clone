@@ -1,0 +1,16 @@
+.box {
+  background-color: red;
+  font-size: 40px;
+}
+
+.box:hover {
+  background-color: blue;
+}
+
+.box:active {
+  background-color: green;
+}
+
+.box:focus {
+  background-color: black;
+}

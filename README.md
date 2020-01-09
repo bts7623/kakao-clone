@@ -370,3 +370,11 @@
 
 #### #3-9 Element States with CSS
   - CSS States
+  - 크롬 개발자 모드 :hov에서 확인 가능 / 각 States 체크박스 클릭 시 해당 효과 보여줌
+    + hover: 마우스 오버 시 CSS 적용
+      * .box:hover{} 식으로 사용
+    + active: 마우스 클릭 시 CSS 적용
+    + focus: 해당 element에 커서가 갔을 때 / text, textarea 같은 경우
+    + visited: 한번 클릭 된 link를 표기하는 듯
+  - 참고 링크
+    + [CSS states](https://www.w3schools.com/css/css_pseudo_classes.asp)
