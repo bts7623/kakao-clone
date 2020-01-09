@@ -378,3 +378,12 @@
     + visited: 한번 클릭 된 link를 표기하는 듯
   - 참고 링크
     + [CSS states](https://www.w3schools.com/css/css_pseudo_classes.asp)
+
+#### #3-10 Recap
+
+#### #Day4 Code Challenge
+  - 조건
+    + Everything has to be done with flexbox.
+    + No margins or paddings allowed.
+    + The second grey box has to become red when the mouse is on top of it.
+    + The grey boxes can only have one class name.
