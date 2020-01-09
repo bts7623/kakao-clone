@@ -10,7 +10,7 @@
 #### 2019.12.27: 기본공지, #1-1 ~ #1-6
 #### 2019.12.30: #1-7 ~ #3-3
 #### 2020.01.08: #3-4 ~ #3-6
-#### 2020.01.09: #3-7
+#### 2020.01.09: #3-7 ~ #3-10
 
   
 # Concept
@@ -387,3 +387,5 @@
     + No margins or paddings allowed.
     + The second grey box has to become red when the mouse is on top of it.
     + The grey boxes can only have one class name.
+
+---
