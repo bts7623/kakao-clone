@@ -11,6 +11,7 @@
 #### 2019.12.30: #1-7 ~ #3-3
 #### 2020.01.08: #3-4 ~ #3-6
 #### 2020.01.09: #3-7 ~ #3-10
+#### 2020.01.10: #4-1 ~
 
   
 # Concept
@@ -387,5 +388,119 @@
     + No margins or paddings allowed.
     + The second grey box has to become red when the mouse is on top of it.
     + The grey boxes can only have one class name.
+  - 풀면서 의문
+    + pinkBox를 어떻게 화면 가운데에 둘까?
+      * 나같은 경우는 blueBox를 father로 만들어서 flex함
+      * 정답은 그냥 body에 flex 걸어주면 됨
+    + body height 값 설정
+      * 정답은 100%
+    * pinkBox 안에 작은 greyBox 명명
+      * 니콜라스는 tinyBox(아주작은 상자)로 명명
+  - 기타
+    * 2번 결석 이후 퀴즈 스코어 공지나 소스코드 정답에 대한 대상에서 제외되는듯
+    * 공지에는 메일리스트나 문제 제공에도 빠진다고 하는데 아직 오고 있음
 
 ---
+#### #4-1 AdvancedCSS Introduction
+  - 고급 CSS
+  - Animation, Transition, Transformation, Media Queries
+
+#### #4-2 Transitions
+  - 이동/변경을 멋지게 보여주는 효과
+    + State(hover, active, focus, visited)에 따라 적용된 propery를 효과적으로 보여줌 > state에서 state로 이동할 때 발생
+  - tansition: property time option;
+    + transition: background-color 3s ease-in-out; // 배경색을 3초동안 서서히 바꿈
+    + transition: all .5s ease-in-out; // 모든 변경 사항을 0.5초동안 서서히 바꿈
+      * 속성을 여러개 적용하려면 콤마(,)로 구분지어 적는다.
+      * all을 쓰면 적용된 모든 속성들이 transition 된다.
+      * 0.5s는 0을 생략해도 되고 혹시나하여 s를 빼고 500을 적어봤는데 작동 안함
+      * s, ms(밀리초)가 있다.
+    + 해당에 걸어버리면 페이지 로딩 시점부터 다양한 속성들을 transition해버리고 state에 걸면 state 실행 시에만 transition 진행
+  - 참고 링크
+    + [transition MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
+
+#### #4-3 Transformations
+  - html 문서의 element들을 변경, 모습이 변하는 효과(기울거나, 키우거나, 비틀거나)
+    + rotate, translate 등
+    + 2개 이상은 공백(' ')을 두고 이어서 쓰면 됨
+      ```css
+      .box:hover{
+         transform: translate(120px, 100%) rotate(3turn);
+      }
+      ```
+  - transition과 함께 써야 효과적임 (transition + transformation)
+  - 참고 링크
+    + [tranformation MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+
+#### #4-4 Animations
+  - transform을 저장해서 별도의 state 없이도 자동으로 작동하도록 함
+  - @keyframes 애니메이션명{} 으로 작성
+    + action이 A → B 단일이면 from{}to{}로 작성
+    + action이 2개 이상이면 0%{} 50%{} 100%{} 등의 방식으로 작성
+      * 0{A}, 50{B}, 100{A}의 경우 "A → B → A" 등을 구현할 때 좋다.
+      * 0{A}, 90{B}, 100{C}이고 10초인 경우 "A → B" 까지 9초를 쓰고 "B → C"에 1초를 씀
+  - animation을 적용할 element에 적용
+    + animation: time animationName (infinite) option
+      * 소요 시간, 애니메이션명(keyfrmames), 무한반복여부, transition 옵션
+      * infinite를 넣으면 해당 애니메이션이 무한 반복된다.
+      * ex_animation: 5s scaleAndRotateSquare infinite ease-in-out;
+  - @keyframes에는 transform과 다른 사항들을 기재한다.
+  ```CSS
+    .box{
+      height: 200px;
+      width: 200px;
+      background-color: red;
+      transition: all .5s ease-in-out;
+      animation: 5s scaleAndRotateSquare infinite ease-in-out;
+    }
+
+    @keyframes scaleAndRotateSquare{
+         0%{
+            transform: none;
+        }
+        50%{
+             transform: rotate(2turn) scale(.5, .5);
+             background-color: blue;
+         }
+         100%{
+             transform: none;
+         }
+    }
+  ```
+  - 추가적으로 animation에 대해 검색할 필요가 있다.
+    + 퇴근전이라 지금은 안찾음
+
+#### #4-5 Media Queries
+  - 반응형 웹을 위해 브라우저 크기를 알아내는 방법
+  - 브라우저 크기에 따른 CSS반영
+    + 모바일 환경에 특히 필요
+      * 본 강좌는 결국 카카오톡 UI이기 때문에 필요한 설명해준듯
+  - @media를 통해 입력하며 해당 옵션에 부합하면 실행함
+    ```CSS
+      @media screen and (min-width: 320px) and (max-width: 640px){
+          body{
+              background-color: green;
+          }
+      }
+    ```
+  - 별 다른 설명 없이 예시 하나만 들고 끝났기 때문에 별도로 찾아보자.
+  - 참고 링크
+    + [Using Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+
+#### #4-6 Recap
+  - 하단부 Study PDF File과 Homework가 있음... 갓혜자..
+  - Homework
+    + Learn about BEM so that you can get ready for Kakao-clone Practice! Read and check out all the links below
+    + 실습에 들어가기 앞서 해야할 공부
+      * [링크1](http://getbem.com/introduction/)
+      * [링크2](https://en.bem.info/methodology/key-concepts/)
+      * [링크3](https://en.bem.info/methodology/quick-start/)
+
+#### #Day5 Code Challenge
+  - 조건
+    + The left column is the element on the normal state and the right is the element when the mouse is on top of it.
+    + There has to be an animation between the two states.
+    + The button should have round borders and shadows.
+    + 왼쪽은 둥근 기본 버튼과 사진, 오른쪽은 조금 옅어지고 그림자가 생긴 버튼과 회전하고 작아지고 검정 테두리가 생긴 사진
+  - 힌트
+    + You will need to use new properties like 'box-shadow' and 'border-radius'
