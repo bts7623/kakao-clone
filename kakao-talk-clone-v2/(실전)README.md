@@ -7,7 +7,7 @@
   - HTML, CSS 개념을 숙지하고 카카오톡 클론 코딩을 진행한다.
 
 # History
-#### 2019.01.12: #0-0 ~
+#### 2019.01.12: #0-0 ~ #1-3
 
   
 # Concept
@@ -47,9 +47,41 @@
 #### #1-1 Status Bar
   - 항상 컴포넌트 단위나 반복되는 페이지 순서로 개발함(하나의 분리되고 독립적인 것)
     + 헤더, 스테이터스 바, 네비게이션 바 등
-  - 참고 링크
-    + [fontawesome](https://fontawesome.com/icons?d=gallery)
+  - Status Bar
+    + 좌측 시간, 우측 상태 값 구현
+    + .status-bar의 큰 frame을 만들고
+      * 2개의 .status-bar__column을 만들고
+      * 하나는 span.status-bar__clock
+      * 하나는 각각의 아이콘들과 베터리 잔량을 표기하는 span.status-bar__battery-level
+    + 아이콘들은 fontawesome에서 가져옴
       * 다양한 유/무료 아이콘 CSS 추가 가능
       * Start에서 이메일 입력하면 kit을 주고 해당 link를 추가해주면 됨
+        * 강좌에서는 CSS link인데 지금 주는 것은 script문 한줄임
       * 이후 icon 탭에 가서 검색하고 좌측 메뉴에서 free 선택해줌
       * 검색된 아이콘 눌러서 class명 받아서 사용하면 됨
+  - 참고 링크
+    + [fontawesome](https://fontawesome.com/icons?d=gallery)
+
+#### #1-2 Screen Title
+  - header: Status Bar 하단부에 위치한 부분 header tag를 써서 구분해줌(header tag에 header class 추가)
+  - header.header 추가 > header__header-column 2개 추가
+    + 왼: Chats text 부분, 오: 아이콘 부분
+      * 왼쪽에는 h1으로 Chats를 써줌
+      * 오른쪽에는 header__icon 3개 추가
+  - icon
+    + fontawesome icon tag에는 규칙이 있음.
+      * far: Regular Style > 선만 딴 형태
+      * fas: Solid Style > 채워져있는 형태
+      * size: .fa-5x  추가 > 5크기로 변경
+      * fa-iconName: fa는 fontawesome인듯. 모든 아이콘 이름 앞에는 'fa-'가 붙음
+
+#### #1-3 Navigation Bar
+  - nav tag로 메뉴 frame을 만들고 ul, li tag로 리스트를 추가함
+    + nav>ul>li
+    + nav: 웹 사이트에서 주요한 지점으로 이동할 수 있는 navigation tag. html5가 되면서 모든지 div에 넣었던 방식에서 영역별로 나누어 작성할 때 일반적으로 메뉴와 같은 부분을 nav태그로 만든다.
+    + ul>li는 순서가 상관없는 리스트를 구현할 때 사용되며, 보통 ul에 여러개의 li tag를 넣고 li tag에 a tag를 넣어 링크 이동하도록 구현함.
+  - 카톡 하단부 친구창, 대화창, 검색창, 더보기 메뉴바를 구현
+    + icon 검색: user, message, search, ellipsis(점 3개)
+  - 해당 탭이면 해당 아이콘은 채워지고(fas) 그 외는 채워지지 않은 아이콘(far)으로 하고자 하는데 유료 아이콘이 있어서 제한됨
+  - 각 선택지로 이동할 때마다 title, header의 문구, 아이콘의 채워짐을 변경해줌
+    + 지금까지 작성된 것을 복사해서 다 넣어줌
