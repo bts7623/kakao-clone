@@ -1,5 +1,5 @@
 # kakao-clone
- nomadcoder kakao-clone coding
+ nomadcoder kakao-clone coding(이론)
 
  Kakao Desktop App clone
 
@@ -11,7 +11,7 @@
 #### 2019.12.30: #1-7 ~ #3-3
 #### 2020.01.08: #3-4 ~ #3-6
 #### 2020.01.09: #3-7 ~ #3-10
-#### 2020.01.10: #4-1 ~
+#### 2020.01.10: #4-1 ~ #4-6
 
   
 # Concept
