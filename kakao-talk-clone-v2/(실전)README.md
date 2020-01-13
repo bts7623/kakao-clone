@@ -8,7 +8,7 @@
 
 # History
 #### 2019.01.12: #0-0 ~ #1-3
-
+#### 2019.01.13: #1-4 ~ #1-5
   
 # Concept
 #### #0-0, #0-1
@@ -85,3 +85,45 @@
   - 해당 탭이면 해당 아이콘은 채워지고(fas) 그 외는 채워지지 않은 아이콘(far)으로 하고자 하는데 유료 아이콘이 있어서 제한됨
   - 각 선택지로 이동할 때마다 title, header의 문구, 아이콘의 채워짐을 변경해줌
     + 지금까지 작성된 것을 복사해서 다 넣어줌
+
+#### #1-4 Chat Screen
+  - friends, find tab에서 comment icon 삭제
+  - more tab에서 comment 대신 qrcode icon 사용
+  - 채팅창 한칸 우선 구현하기
+    + main tag를 써서 브라우져 내의 메인부분 지정(디자인적 측면)
+  - .chats의 main tag에 구현
+    + ul.chats_list로 채팅목록들이 올 목록 묶음 tag 구현
+      * 하위에 li.chats__chat tag를 써서 1개의 채팅창 구현
+    + li를 왼쪽부터 [프로필+이름+미리보기], [시간]으로 나눔
+      * div.chat__column*2
+      * 이 때 chats__chat__column 너무 기니까 chat으로 명명을 바꾸고 헷갈리지 않게 li tag의 class명을 .chats__chat.chat으로 적음.
+    + 첫번째 .chat_column은 [프로필]과 [이름, 미리보기]로 나뉨
+      * img.chat__avatar
+      * div.chat__content
+        * span.chat__username
+        * span.chat__preview
+    + 두번째 .chat_column은 시간으로 span.chat__timestamp
+  - 정리
+    + 메인영역(main.chats) //디자인 측면
+      * 리스트(ul.chats__list)
+        * 채팅 1개 영역(li.chats__chat chat) //한개만 만들면 여러개 만들 수 있음
+          * 프로필+이름+미리보기(div.chat__column) //프로필까지 column 3개 해도 될듯
+            * 프로필 사진(img.chat__avatar)
+            * 이름+미리보기(div.chat__content)
+              * 이름(span.chat__username)
+              * 미리보기(span.chat__preview)
+          * 시간(div.chat__column)
+            * 시간(span.chat__timestamp)
+
+#### #1-5 Friends Screen
+  - 내 프로필 사진이 다른 친구들 아바타 보다 크다.
+  - 개발자 마인드로 보고 생각해라.
+    + chat, friends 모두 비슷한 폼과 같은 모양의 사진을 쓰고 있다.
+      * 이미지를 위한 전역 클래스를 만들어야 한다.
+      * g-avatar class를 추가(global avatar)
+    + li의 종류가 3가지(나, plus, 친구)이기 때문에 하이픈 2개를 쓴 클래스를 추가하여 구분한다.
+      * friend--lg: large라는 뜻(큰 사진) = 내 프로필
+    + li로 구분하기 에매해서 header tag를 추가하여 구분함
+      * 한 웹페이지에 여러 header를 둘 수 있다.
+      * 내 프로필은 header에 둔다.
+    + 모든 영역은 2개의 column으로 둔다.
