@@ -9,6 +9,8 @@
 # History
 #### 2019.01.12: #0-0 ~ #1-3
 #### 2019.01.13: #1-4 ~ #1-5
+#### 2019.01.14: #1-6
+#### 2019.01.16: #1-7 ~ #1-8
   
 # Concept
 #### #0-0, #0-1
@@ -127,3 +129,35 @@
       * 한 웹페이지에 여러 header를 둘 수 있다.
       * 내 프로필은 header에 둔다.
     + 모든 영역은 2개의 column으로 둔다.
+
+#### #1-6 Find Screen
+  - main.find>header.find 생성
+    + 4개의 버튼을 div가 아님 ul>li로 구현
+      * ul.find__header-btn.header-btn: 규칙을 위해 find__ 하위 명칭 사용
+      * 4개 버튼은 크기가 크므로 fa-3x 적용
+      * 단어
+        * envelop: 편지 봉투, 봉투, 비밀 봉투
+    + firend list의 UI가 동일하므로 friends.html에 있는 li를 그대로 가져옴
+      * li class명 find__로 변경하고 불필요한 것 제외 및 수정
+      * friend-status 삭제, now-listening → add-btn 수정
+  - 단축키
+    + 단어 블록 씌운 뒤 Ctrl+D를 누르면 아래 방향으로 같은 단어 하나씩 같이 블록 씌워짐
+
+#### #1-7 More Screen
+  - friends.html의 header 프로필을 가져와서 이용한다.
+  - 버튼들은 ul을 통해 만들어준다.
+  - fontawesome 새로운 타입
+    + fab > brand
+
+#### #1-8 Setting Screen
+  - more에서 설정 버튼 클릭 시 이동되도록 설정 이모티콘을 a tag로 만듦
+  - more.html을 복사해서 붙여넣고 필요없는 부분 삭제
+    + status bar, header에서 이름과 돋보기 빼고는 다 삭제
+  - main > header에 버튼 생성
+
+#### #Day9 Code Challenge
+  - #2.0 ~ #2.3
+  - 조건
+    + Use flex box
+    + Use Google Fonts
+    + Use Font Awesome
