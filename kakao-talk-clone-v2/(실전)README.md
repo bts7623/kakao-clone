@@ -11,6 +11,7 @@
 #### 2019.01.13: #1-4 ~ #1-5
 #### 2019.01.14: #1-6
 #### 2019.01.16: #1-7 ~ #1-8
+#### 2019.01.19: #1-9
   
 # Concept
 #### #0-0, #0-1
@@ -154,6 +155,36 @@
   - more.html을 복사해서 붙여넣고 필요없는 부분 삭제
     + status bar, header에서 이름과 돋보기 빼고는 다 삭제
   - main > header에 버튼 생성
+
+#### #1-9 Chat Screen
+  - setings.html 복붙한다.
+  - index.html에 가서 컨텐츠 li tag 하위 내용을 모두 a tag 안에 넣는다.
+  - 三 같이 생긴 목차 아이콘을 '햄버거바'라고 부른다고 함.
+    + fontawesome에서 hamburger로 검색
+    + search icon 뒤에 div에 넣어서 삽입
+  - settings의 main은 필요 없으니 삭제
+  - 대화 메시지를 남길 리스트 작성
+  - 대화 메시지는 총 2가지(내꺼, 남의꺼)
+    + incoming-message: 도착하는 메시지
+      * content>author+bubble
+        * author: 글쓴이 이름
+        * bubble: 메시지 내용(카톡이 버블 같아서 쓴듯?)
+      * timestamp: 받은 시간
+    + 보내는 메시지
+      * 아바타 삭제, 글쓴이 이름 삭제, timestamp 위치 왼쪽으로 이동
+  - 메시지 창은 main에 넣고 메시지 아래 입력 바는 main 밖에 만듦
+
+#### VSCode 단축키
+  - Art+Shift+방향키: 해당 라인 위, 아래에 복사하기
+  - Art+Shift+I: 블록한 라인 맨 뒤에 커서 두기
+  - Art+Shift+Drag: 블록한 라인에서 해당 마우스 커서 위치를 기준으로 커서 두기
+  - Ctrl+home/end: 맨위, 맨아래
+  - Ctrl+B: 사이드바 숨기기
+  - 단축키들은 File>Preferences>keyboard shortcuts에 들어 있음
+
+---
+
+#### #2-0 ResetCSS
 
 #### #Day9 Code Challenge
   - #2.0 ~ #2.3
