@@ -185,6 +185,10 @@
 ---
 
 #### #2-0 ResetCSS
+  - HTML은 기본적으로 padding, margin등의 디폴트 값이 정해져있다.
+  - 그것 들은 모두 0으로 만드는 것을 reset.css 추가로 한번에 진행하고자 함.
+  - 참고 링크
+    + [reset css](https://meyerweb.com/eric/tools/css/reset/)
 
 #### #Day9 Code Challenge
   - #2.0 ~ #2.3
