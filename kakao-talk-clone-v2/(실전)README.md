@@ -12,6 +12,7 @@
 #### 2019.01.14: #1-6
 #### 2019.01.16: #1-7 ~ #1-8
 #### 2019.01.19: #1-9
+#### 2019.01.21: #2-0 ~ #2-1
   
 # Concept
 #### #0-0, #0-1
@@ -185,10 +186,53 @@
 ---
 
 #### #2-0 ResetCSS
-  - HTML은 기본적으로 padding, margin등의 디폴트 값이 정해져있다.
-  - 그것 들은 모두 0으로 만드는 것을 reset.css 추가로 한번에 진행하고자 함.
+  - reset.css
+    + HTML은 기본적으로 padding, margin등의 디폴트 값이 정해져있다. 
+    + 그것들을 모두 0으로 만드는 것을 reset.css 추가로 한번에 진행하고자 함.
+    + reset.css를 만들어 해당 내용을 넣음
+    + styles.css에 @import "reset.css";하여 reset.css를 import한다.
+    + 각각의 html에는 styles.css를 link한다.
+    + reset.css는 h1의 글씨 크기를 기본 폰트와 같게한다던가 ul, li 기본 나열을 한다던가 하는 것처럼 모두 초기화해버림 > 모든 기본 style 값을 없앰
+  - nomalize.css
+    + 모든 브라우저에서 각각의 요소들의 기본 값으로 통일되어 보이게 하는 것
+    + h1을 h1사이즈로 보인다던가 표준을 따름 > 기본 style 값
   - 참고 링크
     + [reset css](https://meyerweb.com/eric/tools/css/reset/)
+
+#### #2-1 Status Bar
+  - css 기본 값 설정
+    + body style을 설정함으로써 내부 기본 CSS 설정
+      * background-color: white;
+      * padding: 10px 20px;
+        * 카카오톡 UI에 들어간 padding 설정(chrome tool을 이용하여 측정)
+      * color: #020202;
+        * 약간 검은색으로 text color가 들어감(chrome tool을 이용하여 측정)
+  - status-bar.css
+    + status-bar css를 별도로 만들어서 styles.css에 import한다. 
+    + display: flex; 
+      * 모든 element를 바로 옆으로 이동시키는 것(세로 → 가로) 
+      * status-bar div 아래 있던 status-bar__column 2개가 가로로 배치된다. 
+        * 시간과 와이파이, 베터리등 상태 아이콘들
+    + justify-content: space-between;
+      * 가로로 배치된 두 요소를 양 끝으로 떨어뜨리기
+    + margin-bottom: 30px;
+      * status-bar와 header 사이 거리 추가 
+    + google fonts에서 원하는 typography 고르기
+      * 원하는 font를 고르고 CUSTOMIZE를 통해 원하는 값을 선택하고 EMBED 탭에서 import 소스를 복사해서 css파일에 import함
+      * CUSTOMIZE에서 너무 다양한 크기를 체크할 경우 로딩 속도가 느려져 비추
+      * bodt style에 적용
+        * font-family: 여러 글꼴을 쉼표(,)로 구분하여 우선순위를 정의한다.
+        * 앞에서부터 해당 폰트가 없으면 다음 폰트를 적용한다.
+        * 띄어쓰기가 들어간 폰트명은 작은따옴표, 큰따옴표로 감싸준다.
+        * google fonts에서 고른 폰트를 맨 앞에 두고 뒤에부터는 -a를 입력할 때 자동완성되는 디폴트 값을 쓴다.
+    + .status-bar i{font-size: 14px;}
+      * status-bar의 아이콘의 크기를 조금 줄인다.(기본 16px인듯)
+    + opacity: 0.7;
+      * header 및 main 글꼴보다 조금 연한 부분을 표현하기 위해 투명도를 준다.
+      * 0.8의 경우 70%  
+    + 배터리와의 간격을 조금 두기 위해 .status-bar__battery-lever에 margin-left: 5px; 추가
+  - 참고 링크
+    + [google fonts](https://fonts.google.com/)  
 
 #### #Day9 Code Challenge
   - #2.0 ~ #2.3
