@@ -70,10 +70,10 @@
   - <tag> 태그
     + <이름 속성="값">내용</이름> 형식으로 쓰임
     + <name attribute="value">Content</name>
-    + <a>의 attribute로 target="_blank"해주면 새창으로 이동한다.
+    + tag a의 attribute로 target="_blank"해주면 새창으로 이동한다.
 
 #### #2-4
-  - <!DOCTYPE html>: 구글 크롬이 이 문서가 html임을 인식하게 해줌.
+  - !DOCTYPE html: 구글 크롬이 이 문서가 html임을 인식하게 해줌.
     + 따로 닫는 태그 </>가 없는 것: self-contained tag
     + self-contained tag는 그 자체로 정보를 제공하기 때문에 닫는 태그가 없다.
   - html은 head, body로 나뉘며 꼭 닫아줘야 브라우저가 인식함

@@ -38,27 +38,51 @@
         </div>
     </header>
     <main class="chats">
-        <ul class="chats__list">
-            <li class="chats__chat chat">
+        <ul class="Chats__list">
+            <li class="Chats__chat chat">
                 <a href="chat.html">
-                    <div class="chat__column">
-                        <img class="avatar g-avatar" src="images/iu.jpg" >
-                        <div class="chat__content">
-                            <span class="chat__username">
-                                아이유
-                            </span>
-                            <span class="chat__preview">
-                                아 진짜 이따봐~
+                    <div class="chats__chat friend friend--lg">
+                        <div class="friend__column">
+                            <img class="m-avatar friend__avatar" src="images/iu.jpg" >
+                            <div class="friend__content">
+                                <span class="friend__name">
+                                    아이유
+                                </span>
+                                <span class="friend__bottom-text">
+                                    아 진짜 이따봐~
+                                </span>
+                            </div>
+                        </div>
+                        <div class="friend__column">
+                            <span class="chat__timestamp">
+                                Yesterday
                             </span>
                         </div>
                     </div>
-                    <div class="chat__column">
-                        <span class="chat__timestamp">
-                            Yesterday
-                        </span>
-                    </div>
                 </a>
             </li>
+            <li class="Chats__chat chat">
+                <a href="chat2.html">
+                    <div class="Chats__chat friend friend--lg">
+                        <div class="friend__column">
+                            <img src="images/taeyeon.png" class="m-avatar friend__avatar">
+                            <div class="friend__content">
+                                <span class="friend__name">
+                                    태연
+                                </span>
+                                <span class="friend__bottom-text">
+                                    Happy~
+                                </span>
+                            </div>
+                        </div>
+                        <div class="friend__column">
+                            <span class="chat__timestamp">
+                                March 8
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </li> 
         </ul>
     </main>
     <nav class="nav">
@@ -69,17 +93,19 @@
                 </a>
             </li>
             <li class="nav__list-item">
-                <a href="index.html" class="nav_list-link">
+                <a href="index.html" class="nav__list-link">
+                    <div class="nav__badge">8</div>
                     <i class="fas fa-comment"></i>
                 </a>
+
             </li>
             <li class="nav__list-item">
-                <a href="find.html" class="nav_list-link">
+                <a href="find.html" class="nav__list-link">
                     <i class="fas fa-search"></i>
                 </a>
             </li>
             <li class="nav__list-item">
-                <a href="more.html" class="nav_list-link">
+                <a href="more.html" class="nav__list-link">
                     <i class="fas fa-ellipsis-h"></i>
                 </a>
             </li>
