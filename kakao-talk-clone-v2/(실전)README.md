@@ -13,7 +13,8 @@
 #### 2019.01.16: #1-7 ~ #1-8
 #### 2019.01.19: #1-9
 #### 2019.01.21: #2-0 ~ #2-1
-#### 2019.01.27: #2-2 ~ #2-7
+#### 2019.01.26: #2-2 ~ #2-7
+#### 2019.01.27: #2-8 ~ #
   
 # Concept
 #### #0-0, #0-1
@@ -315,6 +316,24 @@
   - CSS에 .class 2개를 적을 때는 항상 하나 위 부모 클래스를 적어준다.
   - friend__status, friend__bottom-text, chat__timestamp 글씨크기, 투명도 조절
 
+#### #2-8 Friends Screen
+  - friend.css > 프로필 하나의 CSS
+  - friends.css > friends.html의 전반적인 CSS
+  - plus friend 상하에 padding, margin, border 추가
+  - 멜론 음악표기 부분은 friends.css가 아닌 friend.css에서 진행
+    + 확실한 구분 필요. 개별CSS냐 창 전체 CSS냐
+    + padding을 준 뒤 boreder-radius 하면 동그래짐
+    + opacity, font-size 조절
+
+#### #2-9 Find-Screen
+  - flex를 2번 적용시킴
+    + 4개의 아이콘을 가로정렬하고 space-between 하기 위해서 list에 적용
+    + 아이콘과 이모티콘을 세로로 두고 가운데 정렬하기 위해 li에 적용
+      * flex-direction: column, align-items: center; 
+    + 좌우 padding 주려다가 space-around로 해결 
+  - 이모티콘 title에 margin top 주고 이모티콘, title 둘 다 사이즈 줄임
+  - header는 끝났고 recommended에 padding-top, margin-top, border-top 줌
+  - 7분30초부터 듣기
 #### #Day9 Code Challenge
   - #2.0 ~ #2.3
   - 조건
