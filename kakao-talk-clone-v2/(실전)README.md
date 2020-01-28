@@ -13,6 +13,8 @@
 #### 2019.01.16: #1-7 ~ #1-8
 #### 2019.01.19: #1-9
 #### 2019.01.21: #2-0 ~ #2-1
+#### 2019.01.26: #2-2 ~ #2-7
+#### 2019.01.27: #2-8 ~ #
   
 # Concept
 #### #0-0, #0-1
@@ -234,6 +236,104 @@
   - 참고 링크
     + [google fonts](https://fonts.google.com/)  
 
+#### #2-2 Header
+  - header 마찬가지로 display: flex, justify-content: space-between 해주기
+  - font-size:24px, font-weight: 700 하기
+    + font-seight는 글씨 굵기인데 여기서는 google font에서 import한 size만 쓸 수 있다.
+  - margin-bottom: 30px
+  - icon
+    + size 키우기
+      * .header__icon font-size:20px; 
+    + content들이 위쪽에 붙어있기 때문에 align-items center 추가
+    + icon 간 간격 주기
+      * margin-left: 20px
+    + 아이콘에 마우스를 대면 클릭 모양 되도록
+      * cursor: pointer; 
+  - div는 display:block이 되어있기 때문에 모양이 망침. span은 inline 
+  - a tag 클릭 시 보라색되는 것을 막는 작업 진행
+    + a{color: inherit;} 부모의 색을 따른다는 뜻 
+
+#### #2-3 Navigation Bar Part One
+  - nav-bar.css 생성 및 import
+  - 스크롤을 해도 제 자리에 있고, body에 걸어놓은 padding이 안 먹어야해서 해제한다.
+    + sticky(끈적거리다)하게 할 것 
+    + position: fixed;
+      * 해당 element를 데어다가 다른 레이어에 올려두기 때문에 width를 설정해주어야만 한다.
+        * background-color를 해서 확인한다.
+      * top OR bottom, left OR right를 통해 element의 위치를 잡는다. 
+    + 아이콘과의 간격을 padding해준다.(20px, 50px) 
+    + nav-bar와 main 사이에 1px의 작은 border가 있다.
+  - status-bar, header도 fixed로 해보기.
+    + 생각보다 잘 안됨  
+  - .nav__list{ position: flex; justify-content: space-between;} 
+    + 이 때, 마지막 아이콘이 화면에서 사라지는 오류가 발생
+      * box-sizing 설정을 border-box로 바꿔서 해결 
+  - box-sizing
+    + Parent container 안에 있는 content의 사이즈 범위를 설정하는 값
+    + content-box, border-box 2가지 형태가 있다.
+      * content-box: CSS 기본값으로 content 영역이 100px일 때 테두리(border)와 안쪽 여백(padding)이 추가되면 해당 너비가 content 너비에 추가되어 부모 크기를 넘어가면 삐져 나감
+      * border-box: border, margin 추가 시 부모 크기를 벗어나게 되면 content 크기를 줄여서 사이즈를 맞춘다. → 보통 box-sizing: border-box;를 해야 크기 조절이 편함
+    + 따라서 마지막 아이콘이 사라진 이유는 설정값이 content-box로 되어있어서 padding값을 합친 크기가 부모 div를 삐져나가서 그렇다.
+  - 참고 링크
+    + [box-sizing MDN](https://developer.mozilla.org/ko/docs/Web/CSS/box-sizing)
+
+#### #2-4 Why Border Box
+  - box-sizing: border-box에 대한 설명
+
+#### #2-5 Navigation Bar Part Two
+  - 채팅이 왔을 때 채팅 이모지에 빨간 숫자 넣기
+    + position: relative, absolute 이용
+      * 자식 absolute, 부모 relative하면 가서 붙는다.
+      * 부모기준 top(bottom), right(left)로 위치 정해줌
+  - 아이콘이 들어가 있느 nav__list-link div안에 nav__badhe div 생성 
+    + 숫자 정렬을 위해 display: flex, justify-content: center, align-items: center 해줌
+    + border-radius: 50%를 줘서 원모양을 만든다.
+
+#### #2-6 Friend Component Part One
+  - 친구창과 채팅목록창이 거의 비슷하기 때문에 한번에 같은 CSS를 적용하기 위해 friend.html에 있는 구조를 index.html에 그대로 사용한다.
+  - 단, li class명에 Chats__chat은 유지해주고 차이나는 부분의 class명을 바꿔준다.
+    + chat__timestamp: 마지막 채팅 시간을 표기
+    + friend__bottom-text: 친구 프로필와 글씨 크기가 조금 차이나서 별도 구분
+  - display: flex 했을 때, li tag 안에 a tag가 들어가면 flex가 안먹는 오류 발생
+    + 잘 모르겠다. 니꼴라스는 li를 2번써서 난 오류인데 나는 그게 아니었음.
+    + 우선은 flex 이용 시 대상의 div 구조를 파악하는 것으로 정리하자.
+  - 사진 크기 조정
+    + .friend .friend__avatar가 있고, g-avatar가 있다. (각각 width: 50px, 70px)
+      * 이 때 friend__avatar는 .friend .friend__avatar로 .friend 자식으로 있는 .friend__avatar에게 적용
+      * g-avatar는 .friend__avatar.g-avatar 띄어쓰기를 하지 않으므로써 2개의 클래스 모두를 갖고 있는 element에 속성을 부여한다.
+
+#### #2-7 Friend Component Part Two
+  - 사진 크기 나누기
+    + 친구창과 더보기의 프로필 사진은 g-avatar 70px
+    + 대화목록 사진은 m-avatar 60px
+    + 나머지는 50px
+  - text-decoration: none;
+    + 링크에 밑줄 쳐지는 것을 없앰
+  - 프로필과 알림말 사이 margin-right: 15px 추가
+    + 이 때 margin이 아닌 padding을 주게되면 box-sizing: border-box 속성 효과로 프로필이 작아진다.
+  - .friend__content .friend__name{display: block}
+    + 이름 span이 상태메시지 span을 아래로 밀어준다.
+  - CSS에 .class 2개를 적을 때는 항상 하나 위 부모 클래스를 적어준다.
+  - friend__status, friend__bottom-text, chat__timestamp 글씨크기, 투명도 조절
+
+#### #2-8 Friends Screen
+  - friend.css > 프로필 하나의 CSS
+  - friends.css > friends.html의 전반적인 CSS
+  - plus friend 상하에 padding, margin, border 추가
+  - 멜론 음악표기 부분은 friends.css가 아닌 friend.css에서 진행
+    + 확실한 구분 필요. 개별CSS냐 창 전체 CSS냐
+    + padding을 준 뒤 boreder-radius 하면 동그래짐
+    + opacity, font-size 조절
+
+#### #2-9 Find-Screen
+  - flex를 2번 적용시킴
+    + 4개의 아이콘을 가로정렬하고 space-between 하기 위해서 list에 적용
+    + 아이콘과 이모티콘을 세로로 두고 가운데 정렬하기 위해 li에 적용
+      * flex-direction: column, align-items: center; 
+    + 좌우 padding 주려다가 space-around로 해결 
+  - 이모티콘 title에 margin top 주고 이모티콘, title 둘 다 사이즈 줄임
+  - header는 끝났고 recommended에 padding-top, margin-top, border-top 줌
+  - 7분30초부터 듣기
 #### #Day9 Code Challenge
   - #2.0 ~ #2.3
   - 조건
