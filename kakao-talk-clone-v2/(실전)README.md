@@ -402,6 +402,12 @@
     + [outline MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/outline)
     + [subtle patterns](https://www.toptal.com/designers/subtlepatterns/)
 
+#### #2-13 Chats Screen Part Two
+  - index.html에도 chat class명을 써서 문제가 생김. chat.html에서는 chat-screen으로 클래스명 변경 > CSS에도 변경
+  - 이것 역시 니콜라스식으로 디자인 시작.
+  - flex주고 방향 column해주고 padding margine 주기
+  - timestamp에 padding, 그림자, 대문자 표기, 굵게(700) 적용
+
 #### #Day9 Code Challenge
   - #2.0 ~ #2.3
   - 조건
