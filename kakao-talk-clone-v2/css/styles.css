@@ -1,6 +1,7 @@
 @import "reset.css";
 @import "status-bar.css";
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap');
+@import "header.css";
 
 body {
     background-color: white;
