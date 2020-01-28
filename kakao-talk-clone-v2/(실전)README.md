@@ -14,7 +14,7 @@
 #### 2019.01.19: #1-9
 #### 2019.01.21: #2-0 ~ #2-1
 #### 2019.01.26: #2-2 ~ #2-7
-#### 2019.01.27: #2-8 ~ #
+#### 2019.01.27: #2-8 ~ #2-12
   
 # Concept
 #### #0-0, #0-1
@@ -333,7 +333,75 @@
     + 좌우 padding 주려다가 space-around로 해결 
   - 이모티콘 title에 margin top 주고 이모티콘, title 둘 다 사이즈 줄임
   - header는 끝났고 recommended에 padding-top, margin-top, border-top 줌
-  - 7분30초부터 듣기
+  - 필요한 부분에 margin을 줌
+  - 친구추가 아이콘에 background-color, padding, border-radius 진행
+
+#### #2-10 More Screen
+  - Find와 다를 바가 거의 없음.
+    + 상단 이모지와 하단 이모지 배치가 거의 비슷하므로 묶어서 CSS 적용하는 정도 참고
+    + 나는 Suggestions에 사진을 썻지만 니콜라스는 이모지에 background-color를 입힘
+  - Suggestions icon에 이모지 버전과 사진버전 둘로 나눔 
+  - 참고 링크
+    + [Cursor MDN](https://developer.mozilla.org/it/docs/Web/CSS/cursor)
+
+#### #2-11 Settings Screen
+  - 뒤로가기 화살표와 이모티콘 크기가 같아야 하기 때문에 header.css를 참고
+  - 화살표 문구와 일직선이 되도록 크기 및 간격 통일
+    + font-size: 20px, margin-right: 20px;  
+  - 기존 캡처 화면과 다른방향으로 진행
+    + 문구의 굵기를 300으로 진행. google font 스크립트에서 300추가 
+      * 얇은 글씨가 됨 
+  - margin-bottom, padding-bottom이 합쳐져서 하단부가 너무 많이 간격이 떨어짐
+    + .settings__setting:last-child{margin-bottom:0;}을 통해 마지막 부분에는 margin은 주지 않음
+  - dribbble, pinterest
+    + 멋진 디자인을 찾을 수 있는 웹사이트
+    + b가 3개임
+    + 디자이너들이 만들어 놓은 다양한 기능의 디자인들을 참고할 수 있음
+  - 참고 링크
+    + [dribbble](https://dribbble.com/)  
+    + [pinterest](https://www.pinterest.co.kr/)
+
+#### #2-12 Chats Screen Part One
+  - 기존 캡처화면이 아닌 버전으로 작업 진행
+    + 영감은 전 강의에서 보여준 bribble과 pinterest에서 참고
+  -  채팅 입력창(chat__write)
+    + fixed해서 하단에 고정시켜놓고 가운데 정렬한다.
+      * fixed 된 container를 가운데 정렬하는 법
+        * margin: 0 auto; //상하 0, 좌우 여백 동일하게
+        * left: 0, right: 0 //fixed 위치 좌, 우 0
+    + 하단에 그림자 생성
+      * box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+      * box-shadow: 수평 수직 퍼짐정도(blur) rgba(r, g, b, 투명도);
+      * 그림자 2개를 붙일 수도 있다.
+        * box-shadow: 그림자A, 그림자B, 그림자C;
+  - 다른 웹사이트에서 영감을 얻어 해당 부분의 CSS 요소를 개발자 모드에서 복사해서 그대로 가져올 수 있다.
+    + 그림자 요소는 stripe.com에서 영감을 받았다.
+    + stripe.com 하단부 그림자 부분을 개발자 모드에서 가져온다.
+  - 입력창 설정
+    + width: 80%를 준다.
+      * .chat__write-column:nth-child(2)로 2번째에만 준다.  
+      * 전체 div에서 입력창에게 80% 영역을 할당해주기 위한 작업인듯하다.
+    + input만 빼서 width: 100%, padding: 10px, border: none; 준다.
+      * 80% 영역에 input text로 가득차게하고 padding으로 두툼하게 만든다. 
+      * text가 상하좌우 여백을 두고 가운데에 써지도록 된다.
+      * border: none으로 테두리를 없애준다.
+    + input:focus{outline: none;}
+      * text 입력 시 생기는 테두리를 없애준다.  
+    + outline
+      * border보다 바깥에 생성할 수 있으며, 여러 속성이 있지만 결국엔 border처럼 outline: 1px solid red; 식으로 설정할 수 있다.
+      * outline-offset: 15px; 등으로 border와의 거리를 지정할 수 있다.
+  - 채팅창을 꾸밀 이미지를 subtle patterns에서 찾는다. 
+    + image 폴더에 넣고 background-image:url("../images/chatBg.png")로 넣는다.
+    + 채팅창을 꽉 채우기 위해 body에 클래스명을 넣어 padding 0을 해주고, header, status-bar에 따로 padding: 0 20px;를 넣어 채팅화면을 제외하고는 padding을 유지시켜준다.
+  - .chat{min-height: 100vh;}
+    + chat 클래스가 적용된 div에 viewport의 100% 높이를 주는 역할
+    + viewport는 screen
+  - 참고 링크
+    + [stripe](https://stripe.com/)  
+    + [outline w3schools](https://www.w3schools.com/css/css_outline.asp)
+    + [outline MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/outline)
+    + [subtle patterns](https://www.toptal.com/designers/subtlepatterns/)
+
 #### #Day9 Code Challenge
   - #2.0 ~ #2.3
   - 조건
