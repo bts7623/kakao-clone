@@ -407,6 +407,34 @@
   - 이것 역시 니콜라스식으로 디자인 시작.
   - flex주고 방향 column해주고 padding margine 주기
   - timestamp에 padding, 그림자, 대문자 표기, 굵게(700) 적용
+  - 사진, 대화창
+    + 대화창, 사진 배열 후 사진을 동그랗게 만들기
+    + width 100%줘서 라인 전체 차지하게 하기 
+      * 나중에 50%로 바꿈
+      * align-self: flex-start;로 왼쪽에 붙임
+    + padding: 0 20px;로 좌우 여백 주기
+  - 참고 링크
+    + [align-self MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self) 
+
+#### #2-14 Chat Screen Part Three
+  - align-items: flex-start;
+    + 상대방 프로필을 위로 올리고 싶어서 사진 class 별도로 flex 설정을 했었는데 그냥 모두를 감싸고 있는 li class인 message class에서 flex-start하면 됐다.
+    + 사진은 중간에 있었으니 올라가고 이름과 문구도 해당 height 내에서 위로 올라간다. 
+  - 닉네임과 bubble 사이 간격 띄우기
+    + .incoming-message .message__author에 margin-bottom: 10px;
+      * display: block;을 해준다. block 요소로 지정해줘야 적용되는듯.
+        * 아마도 span이 inline 구문이라 그런듯?
+
+#### #2-15 Chat Screen Part Four
+  - bubble에 그림자가 안먹어서 니콜라스는 div에 text가 있어서 문제였다.라고 하면서 span으로 바꿧지만 나는 애초에 그림자가 div에서도 잘 먹혀서 그냥 둠(참고)
+  - uiGradients
+    + 이론편에서 잠깐 나왔던 것 같은 홈페이지. 새로고침을 하면 계속 새로운 그라데이션을 보여준다. 
+  - background-image:linear-gradient(시작 색, 끝 색);
+    + 배경색에 그라데이션을 줄 때 사용  
+  - 4분51초부터 
+  - 참고 링크
+    + [uiGradients](https://uigradients.com/)
+    + [linear-gradient MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
 
 #### #Day9 Code Challenge
   - #2.0 ~ #2.3
