@@ -553,8 +553,14 @@
   - 그래도 기본 원리가 브랜치 따는 것이기 때문에 자칫 혼란을 야기하면 소스파일을 다 날릴 수 있으니 조심.
   - 놀랍게도 githgub desktop 가운데 탭에서 브랜치를 바꿔주면 알아서 vscode가 해당 브랜치로 바뀐다.
   - 따라서 branch인지 master인지 잘 구분하여 commit&push 해줘야 한다.
-  - branch의 Create Pull Request가 뭘까?
+  - 궁금한 점
+    + branch의 Create Pull Request가 뭘까?
+  - 알게된 점
+    + branch입장에서 master껄로 덮어쓰고 싶을 때는 branch 탭에서 update from master를 하고, master 입장에서 branch를 땡겨올 때는 branch 탭에서 Merge into current branch를 통해 합친다.
+    + 당연히 서로 겹치지 않으면 바로바로 된다.
   - 참고 링크
     + [bts7623.github.io/](https://bts7623.github.io/kakao-clone/kakao-talk-clone-v2/chat.html)
 
-#### #3-7
+#### #3-7 Conclusions
+  - 하... 드디어 다들었다.
+  - 다음 노마드 챌린지 뽀게자.
