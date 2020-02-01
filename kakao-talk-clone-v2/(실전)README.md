@@ -15,6 +15,9 @@
 #### 2019.01.21: #2-0 ~ #2-1
 #### 2019.01.26: #2-2 ~ #2-7
 #### 2019.01.27: #2-8 ~ #2-12
+#### 2019.01.29: #2-13 ~ #2-15
+#### 2019.01.31: #2-16 ~ #3-0
+#### 2019.02.01: #3-1 ~ 3-7
   
 # Concept
 #### #0-0, #0-1
@@ -277,6 +280,13 @@
   - 참고 링크
     + [box-sizing MDN](https://developer.mozilla.org/ko/docs/Web/CSS/box-sizing)
 
+#### #Day9 Code Challenge
+  - #2.0 ~ #2.3
+  - 조건
+    + Use flex box
+    + Use Google Fonts
+    + Use Font Awesome
+
 #### #2-4 Why Border Box
   - box-sizing: border-box에 대한 설명
 
@@ -431,14 +441,109 @@
     + 이론편에서 잠깐 나왔던 것 같은 홈페이지. 새로고침을 하면 계속 새로운 그라데이션을 보여준다. 
   - background-image:linear-gradient(시작 색, 끝 색);
     + 배경색에 그라데이션을 줄 때 사용  
-  - 4분51초부터 
   - 참고 링크
     + [uiGradients](https://uigradients.com/)
     + [linear-gradient MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
 
-#### #Day9 Code Challenge
-  - #2.0 ~ #2.3
-  - 조건
-    + Use flex box
-    + Use Google Fonts
-    + Use Font Awesome
+#### #2-16 Bugfixing
+  - 니꼴라스의 버블들이 margin-bottom을 먹지 않는 문제를 해결하는 영상
+  - #2-15에서 bubble에 그림자가 안먹어서 니콜라스가 span으로 div들을 바꿨는데 결과적으로 span이 box처리가 안되어서 margin을 먹지 않게됨
+  - 따라서 니콜라스는 span처리를 해서 그림자가 생긴줄 아니까 css에서 bubble display: block; 처리를 해줘서 span이지만 box로 인식하게해서 margin을 줌
+  
+#### #3-0 Fixed Header
+  - header 고정
+    + header를 고정시키기 위해 status-bar와 header를 header-wrapper div로 감싼다.
+    + position fixed를 해주고 top: 0px, width: 100%, background-color: white 해준다.
+    + box-shadow를 가져와 적용시켜준다. 너무 진해서 맨 앞꺼는 지움
+  - main 부분인 chat-screen에 margin-top: 100px해줘서 간격을 맞춰준다.
+
+#### #3-1 Going Crazy Part One
+  - 기존 text input을 버리고 클릭 했을 때 효과가 들어간 input을 만들고자 함
+  - input:focus 때 이모티콘을 숨기려면 이모티콘 태그들이 input 태그 보다 뒤에 있어야 한다.
+    + 다 뒤로 보냄.
+    + 이모티콘 position: absolute로 모두 변경
+  - sibling
+    + 잘모르겠음. CSS 특정 요소 선택 시 해당 요소 이후의 요소들만 선택된다는 듯
+    + input 다음 요소에만 CSS를 줄 수 있기 떄문에 input tag이전 요소에는 CSS를 줄 수 없다.
+    + .chat__write:focus ~ .chat__icon{display: none;}
+      * .chat__write(input tag) 다음에 있는 sibling 선택
+      * opacity: 0으로 해서 transition 먹임
+  - sibling selector
+    + CSS 적용 요소를 선택하는 방법 중 하나로 ':, +, ~' 등으로 요소를 선택한다.
+    + 여기서 쓰인 요소는 '~'로 형제 요소들을 선택하는데 해당 input 하위 형제들만 선택하는 것 같다.
+  - 참고 링크
+    + [sibling selector](https://www.codingfactory.net/10791)
+
+#### #3-2 Going Crazy Part Two
+  - .chat__write:focus{}
+    + 줄어들면서 위로 올라와서 그림자와 둥근 테두리 갖기
+      * box-shadow, transform: translateY(-100px);, width: 80%, border-radius
+    + transition: all 0.5s ease-in-out;을 넣어서 자연스러운 효과 추가
+  - container에 padding 좌우가 걸려있어서 input 양 옆에 공백이 있었음. 그래서 지워줌
+  - .chat__write margin: 0 auto;
+    + input tag 정렬을 안해놓으면 transition 시 왼쪽으로 치우쳐짐
+  - 참고 링크
+    + [transform MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)   
+
+#### #3-3 Message Animation
+  - 개요
+    + 입력 input 창에 그림자가 넘실거리는 float animation 주기
+    + incommung message, sent message 양 옆에서 나오는 animation 주기
+  - 입력 input 창에 그림자가 넘실거리는 float animation 주기
+    + @keyfrmaes floating{}
+      * 그림자 3개 넣어서 50%에 변화 추가
+      * transform: translateY()추가해서 둥실둥실 추가
+        * 기존 효과가 이미 -100이므로 -100 ~ -110으로 작성
+    + .chat__write:focus에 animation 추가 해서 linear, infinite 하기 
+    + infinite로 무한 반복 시켜서 둥실 둥실 느낌 나기 
+    + 문제가 생김. translate 기본값이 -100px라서 자연스럽게 안올라가고 점핑되듯이 확 튐.
+    + 니콜라스는 따로 처리 안하고 그냥 translate 효과 없애고 그림자만 갖고가기로 함.
+  - incommung message, sent message 양 옆에서 나오는 animation 주기
+    + to, from으로 만들고 transform: translateX();로 효과를 준다.
+    + forwards 효과를 줘서 마지막 상태로 유지되도록 작성
+
+#### #3-4 Fade Animations
+  - 개요
+    + 채팅창 프로필 그림자 주고 Y축으로 회전하기
+    + main창 load 시 아래에서 위로 올라오기(50px)
+    + navigation bar main창 load 후 아래에서 올라오기(80px)
+  - 채팅창 프로필 그림자 주고 Y축으로 회전하기
+    + @keyframes spinImg{}
+    + transform: rotateY(1turn);
+    + animation: spinImg .5s linear infinite;
+  - main창 load 시 아래에서 위로 올라오기(50px)
+    + styles.css에 main animation 적용
+  - navigation bar main창 load 후 아래에서 올라오기
+    + nav animation 걸기
+    + animation-delay: 0.5s; 줘서 main load 후 load되도록 설정
+    + 처음부터 nav-bar가 사라졌다가 올라올 수 있도록 nav 설정에 transform: translateY(80px); 넣어주기 
+
+#### #3-5 Screen Size Media Query
+  - 개요
+    + 브라우저 폭 최소 사이즈가 일정 이상일 시 경고 문구 화면으로 화면을 가림
+  - min-width: 500px 이상이면 화면 출력
+    + span.notice 
+      * 모든 html 최 하단에 경고문구 span을 넣는다.
+      * nav 밑에 정도? 
+      * z-index: 4; 정도 넣어줘야 header-bar에 안 묻힌다.
+      * position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      * 나머지 알아서 맞춰주고 display: none을 해준다.
+        * 이 때 opacity: 0;으로 해버리면 화면을 가리고는 있기 때문에 다른 기능들 클릭이 안된다.
+    + mobile.css 
+      * @media screen and (min-width: 500px){} 
+      * .notice{display: flex;}
+      * 이 경우 500px에도 적용되니 501px로 설정하는 것이 정확하다.
+    + Media Query
+      * 대충 찾아봤을 때, 다양한 조건을 걸어서 CSS를 적용시킬 때 사용하는 것 같다.
+      * screen은 PC 화면, print는 출력화면 등으로 나누어서 보고 and, not, or(,), only 등으로 조건을 걸 수 있고, 조건 안에 조건을 중첩해서 넣을 수도 있다.
+      * screen, print 등의 1차적?인 부분 외에 min-width 등의 속성을 넣을 대는 괄호안에 넣어줘야 한다.
+      * 우리가 쓰는 screen and (min-width)의 경우, 사용자가 화면에서 사용하고(screen and) 최소 폭이 550px이상일 때(min-width)라는 뜻으로 볼 수 있다.
+      * 어차피 화면으로 보고 있기 때문에 screen을 지워도 정상 작동한다.
+  - 참고 링크
+    + [@media MDN](https://developer.mozilla.org/ko/docs/Web/CSS/@media#mf-name) 
+    + [Media Query MDN](https://developer.mozilla.org/ko/docs/Web/Guide/CSS/Media_queries#%EA%B5%AC%EB%AC%B8)
+
+#### #3-6 Publishing on Github Pages
+  - front-end로만 구성된 이번 project를 github에서 웹사이트 화 시킬 수 있다.
+  - branch를 하나 따서 project를 올리는 것인데, 이 때 꼭 branch명을 'gh-pages'로 지어야함.
+- 

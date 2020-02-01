@@ -13,21 +13,3 @@
     margin-left: 5px;
 }
 
-.nav .nav__badge{
-    color: white;
-    position: absolute;
-    top: -7px;
-    right: -7px;
-    font-size: 10px;
-    background-color: #dc5d46;
-    width: 18px;
-    height: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-}
-
-.nav .nav__list-link{
-    position: relative;
-}
