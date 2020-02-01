@@ -545,5 +545,13 @@
 
 #### #3-6 Publishing on Github Pages
   - front-end로만 구성된 이번 project를 github에서 웹사이트 화 시킬 수 있다.
+  - 모든 작업은 github desktop에서 할 수 있다.(web 물론 가능)
   - branch를 하나 따서 project를 올리는 것인데, 이 때 꼭 branch명을 'gh-pages'로 지어야함.
-- 
+  - 'gh-pages'를 만들고 나면 'github아이디.github.io/폴더명(index.html이 있는 곳)'으로 접속하면 페이지가 구현되어 있다.
+  - 꼭 index.html이 있어야 해당 페이지가 열린다.
+  - 또한 폴더명이 모두 소문자여야지 된다.
+  - 그래도 기본 원리가 브랜치 따는 것이기 때문에 자칫 혼란을 야기하면 소스파일을 다 날릴 수 있으니 조심.
+  - 놀랍게도 githgub desktop 가운데 탭에서 브랜치를 바꿔주면 알아서 vscode가 해당 브랜치로 바뀐다.
+  - 따라서 branch인지 master인지 잘 구분하여 commit&push 해줘야 한다.
+  - 참고 링크
+    + [bts7623.github.io/](https://bts7623.github.io/kakao-clone/kakao-talk-clone-v2/chat.html)
