@@ -553,6 +553,7 @@
   - 그래도 기본 원리가 브랜치 따는 것이기 때문에 자칫 혼란을 야기하면 소스파일을 다 날릴 수 있으니 조심.
   - 놀랍게도 githgub desktop 가운데 탭에서 브랜치를 바꿔주면 알아서 vscode가 해당 브랜치로 바뀐다.
   - 따라서 branch인지 master인지 잘 구분하여 commit&push 해줘야 한다.
+  - branch의 Create Pull Request가 뭘까?
   - 참고 링크
     + [bts7623.github.io/](https://bts7623.github.io/kakao-clone/kakao-talk-clone-v2/chat.html)
 
