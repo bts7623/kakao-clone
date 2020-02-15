@@ -13,7 +13,7 @@
 #### 2020.01.09: #3-7 ~ #3-10
 #### 2020.01.10: #4-1 ~ #4-6
 
-  
+
 # Concept
 ### Module #1 The tools of a Web Developer
 #### #1-1, #1-2
@@ -430,6 +430,7 @@
       ```
   - transition과 함께 써야 효과적임 (transition + transformation)
   - 참고 링크
+    
     + [tranformation MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
 
 #### #4-4 Animations
@@ -485,6 +486,7 @@
     ```
   - 별 다른 설명 없이 예시 하나만 들고 끝났기 때문에 별도로 찾아보자.
   - 참고 링크
+    
     + [Using Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 
 #### #4-6 Recap
@@ -504,3 +506,12 @@
     + 왼쪽은 둥근 기본 버튼과 사진, 오른쪽은 조금 옅어지고 그림자가 생긴 버튼과 회전하고 작아지고 검정 테두리가 생긴 사진
   - 힌트
     + You will need to use new properties like 'box-shadow' and 'border-radius'
+
+
+
+#### #Day6 Code Challenge
+
+- 조건
+  - No images allowed
+- hint
+  - To delay an animation, use 'anumation-delay' or add a number to the animation expression: 'anumation: 5s my Anim linear 2s; where '2s' is the anumation delay.
