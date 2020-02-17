@@ -1,0 +1,67 @@
+.d-avatar {
+  width: 30px;
+  height: 30px;
+}
+
+.detail__post {
+  width: 325px;
+  height: 425px;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.detail__comments {
+  width: 325px;
+  height: 225px;
+  background-color: white;
+  border-radius: 25px;
+  margin-top: 10px;
+}
+
+.detail__title {
+  padding: 30px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  padding-right: 20px;
+}
+
+.comments__list {
+  padding: 25px 20px;
+}
+
+.comment {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.comment__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 10px;
+  padding-left: 10px;
+}
+
+.comment__name {
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+.comment__content,
+.comment__like {
+  opacity: 0.5;
+}
+
+.comment__like {
+  padding-top: 8px;
+}
+
+.comment__heart {
+  padding-right: 15px;
+}
