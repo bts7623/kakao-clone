@@ -1,0 +1,55 @@
+body{
+    height: 1500px;
+    margin: 0;
+    padding: 0;
+    padding-top: 100px;
+}
+
+.box{
+    vertical-align: top;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.redbar{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0px;
+    left: 0px;
+    background-color: #FF7979;
+    z-index: 1;
+}
+
+.yellowbar{
+    background-color: #FFCC00;
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 28%;
+    border: 5px solid #979797;
+}
+
+.skybar{
+    background-color: #7ED6DF;
+    display: inline-block;
+    height: 100%;
+    width: 70%;
+}
+
+.skybar h1{
+    color: white;
+    font-weight: 700;
+    margin: 50px 0 0 50px;
+}
+
+.greenbar{
+    background-color: #BADC58;
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    top: -25px;
+    left: -50px;
+    z-index: 2;
+}
