@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.frame {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.first-frame {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid white;
+  position: absolute;
+  top: -50px;
+  left: 200px;
+}
+
+.name,
+.price,
+.btn {
+  font-weight: 800;
+  font-size: 25px;
+}
+
+.description {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.job {
+  padding-top: 20px;
+  padding-bottom: 35px;
+}
+
+.description,
+.job,
+.people {
+  font-size: 15px;
+  opacity: 0.5;
+}
+
+i {
+  color: #febe50;
+}
+
+i:nth-child(5) {
+  color: rgb(51, 51, 51);
+  opacity: 0.2;
+}
+
+.background {
+  background-image: url("../image/bgimage.jpg");
+  height: 40%;
+  border-radius: 10px 10px 0 0;
+}
+
+.content-box {
+  position: relative;
+  padding: 80px 70px 30px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  width: 170px;
+  height: 60px;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  display: flex;
+}
+
+.follow-btn {
+  background-color: #6b75ff;
+  color: #eaecff;
+}
+
+.message-btn {
+  background-color: #eaecff;
+  color: #6b75ff;
+}
