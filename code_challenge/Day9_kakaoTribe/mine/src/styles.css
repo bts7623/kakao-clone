@@ -14,6 +14,7 @@ body {
   border-radius: 10px;
   background-color: white;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .first-frame {
@@ -74,7 +75,6 @@ i:nth-child(5) {
 .background {
   background-image: url("../image/bgimage.jpg");
   height: 40%;
-  border-radius: 10px 10px 0 0;
 }
 
 .content-box {

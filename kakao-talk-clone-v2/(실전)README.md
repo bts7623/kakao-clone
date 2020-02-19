@@ -289,6 +289,7 @@
 
 #### #2-4 Why Border Box
   - box-sizing: border-box에 대한 설명
+    - width, height 설정 후 padding을 추가해도 box크기가 커지지 않고 padding을 포함한 사이즈 즉, padding을 제외한 실질적인 box 사이즈를 줄이는 방식
 
 #### #2-5 Navigation Bar Part Two
   - 채팅이 왔을 때 채팅 이모지에 빨간 숫자 넣기
