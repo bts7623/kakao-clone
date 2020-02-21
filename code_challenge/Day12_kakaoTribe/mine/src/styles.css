@@ -27,11 +27,12 @@ body {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4),
     inset -3px -3px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  position: relative;
 }
 
 .screen {
-  position: relative;
   padding: 0 10px;
+  height: 500px;
   width: 100%;
   background-image: linear-gradient(
     rgba(216, 216, 216, 0) 0%,
@@ -141,18 +142,19 @@ ul {
 }
 
 nav {
+  box-sizing: border-box;
   height: 60px;
   position: absolute;
-  left: 0;
-  bottom: 20px;
-  width: 100%;
+  left: 15px;
+  bottom: 10px;
+  width: 90%;
   background-color: #f8f8f8;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: rgb(83, 83, 83);
   margin-bottom: 10px;
-  border-radius: 10px 10px 30px 30px;
+  border-radius: 0px 0px 30px 30px;
 }
 
 nav i:nth-child(2) {
