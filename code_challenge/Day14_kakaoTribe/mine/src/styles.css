@@ -1,0 +1,165 @@
+/* Common Set */
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  width: 400px;
+  height: 300px;
+  margin-bottom: 50px;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  height: 150px;
+  width: 150px;
+  border-radius: 30px;
+  background-size: cover;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+/* Pop set */
+
+.pop {
+  width: 100%;
+  display: flex;
+  background-color: #283a48;
+  visibility: hidden;
+}
+
+.pop a {
+  display: inline-block;
+  width: 120px;
+  height: 35px;
+  text-justify: center;
+  background-color: #ea4463;
+  text-align: center;
+  line-height: 35px;
+  color: white;
+  font-weight: 700;
+}
+
+.pop span {
+  color: #ea4463;
+}
+
+.pop__text {
+  width: 100%;
+}
+
+/* camera set */
+.main-camera {
+  position: relative;
+}
+
+.box-camera {
+  background-color: #009e91;
+  position: absolute;
+}
+
+.inner-camera {
+  background-image: url("../images/camera.png");
+}
+
+.pop-camera {
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.main-camera:hover > .pop {
+  transform: translate(20px, 20px);
+  visibility: visible;
+  opacity: 1;
+}
+
+.pop-camera .pop__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pop-camera .pop__text span {
+  margin-bottom: 30px;
+}
+
+/* gamecenter set */
+.main-gamecenter {
+  overflow: hidden;
+}
+
+.box-gamecenter {
+  background-color: #f8a3a1;
+  transition: all 0.3s ease-in-out;
+}
+
+.inner-gamecenter {
+  background-image: url("../images/gamecenter.png");
+}
+
+.pop-gamecenter {
+  padding: 15px;
+  height: 100px;
+  visibility: visible;
+}
+
+.pop__btn {
+  display: flex;
+  align-items: flex-end;
+}
+
+.main-gamecenter:hover > .box {
+  height: 200px;
+}
+
+/* safari set */
+.box-safari {
+  background-color: #d6f0f9;
+}
+
+.inner-safari {
+  background-image: url("../images/safari.png");
+}
+
+.main-safari {
+  position: relative;
+}
+
+.box-safari {
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+.pop-safari {
+  visibility: visible;
+  height: 100%;
+  padding: 15px;
+  align-items: flex-end;
+}
+
+.main-safari:hover > .box {
+  transform: scale(0.5);
+  margin-top: -50px;
+}
