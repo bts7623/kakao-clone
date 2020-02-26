@@ -1,0 +1,89 @@
+/* @import url("reset.css"); */
+@import url("https://fonts.googleapis.com/css?family=Knewave|Sunflower:300,500,700|Montserrat:100,400,700&display=swap");
+@import url("statusBar.css");
+@import url("navBar.css");
+@import url("header.css");
+@import url("chatList.css");
+@import url("chat.css");
+
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat";
+  font-size: 18px;
+  /* 100, 400, 700 */
+  height: 700px;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+main {
+  padding-top: 110px;
+}
+
+h1 {
+  font-family: "Knewave";
+  margin: 0;
+}
+
+/* index관련 css */
+.index-main {
+  background-image: linear-gradient(#e66465, #9198e5);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.index__title-box {
+  color: rgb(129, 45, 45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.index__logo {
+  background-image: url("images/logo2.png"),
+    linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px dotted rgb(129, 45, 45);
+}
+
+.index__text {
+  color: white;
+  opacity: 0.8;
+  margin: 15px 0;
+  letter-spacing: -1px;
+}
+
+.index__enter-btn {
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(219, 207, 207);
+  background-color: rgb(129, 45, 45);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
