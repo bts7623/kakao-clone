@@ -1,0 +1,154 @@
+.chats__chat a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chats__chat .chats__column {
+  display: flex;
+  align-items: center;
+  color: rgb(46, 4, 4);
+}
+
+.chats__text-box {
+  font-family: "Sunflower";
+  /* 300, 500, 700 */
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chats__text-box .chats__name {
+  font-weight: 700;
+}
+
+.chats__text-box .chats__text {
+  font-size: 15px;
+  font-weight: 300;
+  opacity: 0.5;
+  margin-top: 5px;
+}
+
+.chats__timestamp {
+  font-size: 15px;
+  opacity: 0.5;
+}
+
+.chats__avatar1 {
+  background-image: url("images/bong.jpg");
+  background-position: -30px 0px;
+}
+
+.chats__avatar2 {
+  background-image: url("images/bong.jpg");
+  background-position: -30px 0px;
+}
+
+.chats__avatar3 {
+  background-image: url("images/bong.jpg");
+  background-position: -30px 0px;
+}
+
+.chats__avatar4 {
+  background-image: url("images/profile.jpg");
+  background-position: 0px -18px;
+}
+
+.chats__avatar5 {
+  background-image: url("images/bong.jpg");
+  background-position: -30px 0px;
+}
+
+.chats__avatar6 {
+  background-image: url("images/bong.jpg");
+  background-position: -30px 0px;
+}
+
+.avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.chats__chat {
+  padding: 10px 0 10px 10px;
+}
+
+.chats__chat a {
+  padding: 10px 20px 10px 10px;
+}
+
+.chats__chat:hover > a {
+  background-image: linear-gradient(to left, #e66465, #9198e5);
+  border-radius: 50px 0 0 50px;
+}
+
+.chats__chat:hover .chats__column {
+  color: white;
+}
+
+.chats__me-box {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.chats__me {
+  font-size: 15px;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background-image: linear-gradient(to left, #e66465, #9198e5);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.chats__chat:nth-child(4) {
+  position: relative;
+}
+
+.sale-marker {
+  position: absolute;
+  top: 0;
+  right: -110px;
+  width: 150px;
+  height: 30px;
+  font-size: 15px;
+  background-color: #f9e000;
+  border-left: 15px double rgb(65, 37, 0);
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  animation: saleAnim 1s infinite ease-in-out;
+  padding-left: 15px;
+}
+
+.sale-marker a,
+.sale-marker a:visited {
+  color: rgb(65, 37, 0);
+}
+
+.sale-marker:hover {
+  right: 0;
+  animation: none;
+  padding: 0;
+}
+
+@keyframes saleAnim {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
